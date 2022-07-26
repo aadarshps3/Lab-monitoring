@@ -1,0 +1,130 @@
+<html lang="en">
+{% extends 'admin/admin_homepage.html' %}
+<head>
+    
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Screen shots </title>
+</head>
+<body>
+    {% block content %}
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">User Details</h1>
+            
+        </div>
+        
+
+        <!-- Content Row -->
+        <div class="row">
+            <div class="card shadow mb-4">
+                
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Sl.No</th>
+                                    <th>Client Name</th>
+                                                
+                                    <th>User Name</th>
+                                    <th>Ip Address</th>
+                                    <th>Email</th>
+                                    <th>Phone Number</th>
+                                   
+                                    
+                                    <th >Action</th>
+
+
+                                    
+                                </tr>
+                            </thead>
+                            
+                            <tbody>
+                                {% for x in user_details %}
+                                {% if not x.is_superuser %}
+                                    <tr>
+                                        <td>{{forloop.counter|add:0}}</td>
+                                        <td>{{x.client_name}}</td>
+                                        <td>{{x.username}}</td>
+
+                                        <td>{{x.ip_address}}</td>
+                                        <td>{{x.email}}</td>
+                                        <td>{{x.phone}}</td>
+
+<!--                                                -->
+<!--                                            <form method="POST">-->
+<!--                                                {% csrf_token %}-->
+<!--                                            <td><button type="submit"  class="btn btn-warning" onclick="return show_alert()" name="remove_id" value="{{x.id}}">Screenshot</button> </td>-->
+                                            <td><a href="{% url 'takescreenshot' id=x.id %}"> <button type="submit"  class="btn btn-warning"  >Screenshot</button></a></td>
+<!--                                        </form>-->
+
+                                    </tr>
+                                {% endif %}
+                                {% endfor %}
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          
+            
+            
+
+
+
+            
+            
+
+            
+
+           
+        </div>
+
+        
+
+       
+
+    </div>
+<!--    <script>-->
+<!--        function show_alert()-->
+<!--        {-->
+<!--            if(!confirm("Do you confirm  it?"))-->
+<!--            {-->
+<!--                return false;-->
+
+<!--            }-->
+<!--            -->
+<!--            this.form.submit();-->
+<!--        }-->
+<!--    </script>-->
+
+    {% endblock %}
+
+    
+
+   
+    
+</body>
+</html>

@@ -1,0 +1,114 @@
+<html lang="en">
+{% extends 'admin/admin_homepage.html' %}
+<head>
+    
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Users </title>
+</head>
+<body>
+    {% block content %}
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">User Details</h1>
+            
+        </div>
+        
+
+        <!-- Content Row -->
+        <div class="row">
+            <div class="card shadow mb-4">
+                
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+<!--                            <thead>-->
+<!--                                <tr>-->
+<!--                                    <th>Sl.No</th>-->
+<!--                                    <th>UserName</th>-->
+<!--                                    <th>Images</th>-->
+
+
+
+<!--                                    -->
+<!--                                </tr>-->
+<!--                            </thead>-->
+                            
+                            <tbody>
+
+<!--                                    <tr>-->
+
+
+<!--                                        <td><h1>Key: </h1></td>-->
+<!--                                        <td><h2>Value:</h2></td>-->
+
+
+<!--                                    </tr>-->
+
+                               
+                            </tbody>
+                        </table>
+                        <h4>Live Monitoring data</h4>
+                        <pre>{{ data | linebreaks }}</pre>
+                    </div>
+                </div>
+            </div>
+
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          
+            
+            
+
+
+
+            
+            
+
+            
+
+           
+        </div>
+
+        
+
+       
+
+    </div>
+    <script>
+        function show_alert()
+        {
+            if(!confirm("Do you really want to remove it?")) 
+            {
+                return false;
+            }
+            
+            this.form.submit();
+        }
+    </script>
+
+    {% endblock %}
+
+    
+
+   
+    
+</body>
+</html>
